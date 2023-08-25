@@ -294,7 +294,92 @@ public class ExcelUtils {
 		return true;
 
 	}
+	
+	//الي ضفتو
 
+    public void addRandomDataToEmptyRows(int targetEmptyRowCount, int columnIndex) {
+        Random random = new Random();
+
+        int rowCount = sheet.getLastRowNum() + 1;
+        int emptyRowCount = 0;
+
+        for (int i = 0; i < rowCount; i++) {
+            XSSFRow currentRow = sheet.getRow(i);
+
+            if (currentRow == null) {
+                currentRow = sheet.createRow(i);
+            }
+
+            XSSFCell currentCell = currentRow.getCell(columnIndex);
+            if (currentCell == null || currentCell.getCellType() == CellType.BLANK) {
+                emptyRowCount++;
+                if (emptyRowCount <= targetEmptyRowCount) {
+                    currentCell = currentRow.createCell(columnIndex);
+                    int dataType = random.nextInt(3);
+
+                    switch (dataType) {
+                        case 0: // String
+                            currentCell.setCellValue("RandomString" + random.nextInt(1000));
+                            break;
+                        case 1: // Numeric
+                            currentCell.setCellValue(random.nextDouble() * 100);
+                            break;
+                        case 2: // Boolean
+                            currentCell.setCellValue(random.nextBoolean());
+                            break;
+                    }
+                    System.out.println("Successfully entered value");
+                } else {
+                    break;
+                }
+            }
+        }
+
+        try {
+            fileOut = new FileOutputStream(path);
+            workbook.write(fileOut);
+            fileOut.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    //تاني وحدة ضفتها
+    public void readDataFromCells1() {
+        int rowCount = sheet.getLastRowNum() + 1;
+        int columnCount = getColumnCount();
+
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < columnCount; j++) {
+                XSSFRow currentRow = sheet.getRow(i);
+                if (currentRow != null) {
+                    XSSFCell currentCell = currentRow.getCell(j);
+                    if (currentCell != null) {
+                        String cellData = "";
+                        if (currentCell.getCellType() == CellType.STRING) {
+                            cellData = currentCell.getStringCellValue();
+                        } else if (currentCell.getCellType() == CellType.NUMERIC || currentCell.getCellType() == CellType.FORMULA) {
+                            double numericValue = currentCell.getNumericCellValue();
+
+                            if (HSSFDateUtil.isCellDateFormatted(currentCell)) {
+                                Calendar cal = Calendar.getInstance();
+                                cal.setTime(HSSFDateUtil.getJavaDate(numericValue));
+                                cellData = (cal.get(Calendar.DAY_OF_MONTH)) + "/" + (cal.get(Calendar.MONTH) + 1) + "/" + (cal.get(Calendar.YEAR) % 100);
+                            } else {
+                                cellData = String.valueOf(numericValue);
+                            }
+                        } else if (currentCell.getCellType() == CellType.BOOLEAN) {
+                            cellData = String.valueOf(currentCell.getBooleanCellValue());
+                        }
+
+                        System.out.println("Test Case: " + (i + 1) + ", Column: " + (j + 1) + ", Value: " + cellData);
+                    }
+                }
+            }
+        }
+        
+    }
+    //ثالث وحدة ضفتها
+   
 
 	// find whether sheets exists
 	public boolean isSheetExist(String sheetName) {

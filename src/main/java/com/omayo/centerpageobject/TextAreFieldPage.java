@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.omayo.actiondriver.Action;
 
-public class TextAreFieldPage {
+public class TextAreFieldPage {//Area
 	public WebDriver driver;
 	Action action = new Action();
 

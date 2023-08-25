@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-16T09:22:37 EET" name="Default suite" finished-at="2023-08-16T09:26:11 EET" duration-ms="213531">
+  <suite started-at="2023-08-17T12:17:33 EET" name="Default suite" finished-at="2023-08-17T12:19:11 EET" duration-ms="98263">
     <groups>
     </groups>
-    <test started-at="2023-08-16T09:22:37 EET" name="Default test" finished-at="2023-08-16T09:26:11 EET" duration-ms="213531">
-      <class name="com.omayo.centerpagetest.TextAreaFiledTest">
-        <test-method is-config="true" signature="OpenPage()[pri:0, instance:com.omayo.centerpagetest.TextAreaFiledTest@72cc7e6f]" started-at="2023-08-16T09:22:39 EET" name="OpenPage" finished-at="2023-08-16T09:26:00 EET" duration-ms="200621" status="PASS">
+    <test started-at="2023-08-17T12:17:33 EET" name="Default test" finished-at="2023-08-17T12:19:11 EET" duration-ms="98263">
+      <class name="com.omayo.leftpagetest.ButtonsWithSameNameTest">
+        <test-method is-config="true" signature="openPage()[pri:0, instance:com.omayo.leftpagetest.ButtonsWithSameNameTest@72cc7e6f]" started-at="2023-08-17T12:17:33 EET" name="openPage" finished-at="2023-08-17T12:18:51 EET" duration-ms="78082" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OpenPage -->
-        <test-method signature="TextAreaFiledTest()[pri:0, instance:com.omayo.centerpagetest.TextAreaFiledTest@72cc7e6f]" started-at="2023-08-16T09:26:00 EET" name="TextAreaFiledTest" finished-at="2023-08-16T09:26:09 EET" duration-ms="9181" status="PASS">
+        </test-method> <!-- openPage -->
+        <test-method signature="buttonsWithSameNameTest()[pri:0, instance:com.omayo.leftpagetest.ButtonsWithSameNameTest@72cc7e6f]" started-at="2023-08-17T12:18:51 EET" name="buttonsWithSameNameTest" finished-at="2023-08-17T12:19:08 EET" duration-ms="17197" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TextAreaFiledTest -->
-        <test-method is-config="true" signature="Clouser()[pri:0, instance:com.omayo.centerpagetest.TextAreaFiledTest@72cc7e6f]" started-at="2023-08-16T09:26:11 EET" name="Clouser" finished-at="2023-08-16T09:26:11 EET" duration-ms="0" status="PASS">
+        </test-method> <!-- buttonsWithSameNameTest -->
+        <test-method is-config="true" signature="clouser()[pri:0, instance:com.omayo.leftpagetest.ButtonsWithSameNameTest@72cc7e6f]" started-at="2023-08-17T12:19:10 EET" name="clouser" finished-at="2023-08-17T12:19:11 EET" duration-ms="975" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Clouser -->
-      </class> <!-- com.omayo.centerpagetest.TextAreaFiledTest -->
+        </test-method> <!-- clouser -->
+      </class> <!-- com.omayo.leftpagetest.ButtonsWithSameNameTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
